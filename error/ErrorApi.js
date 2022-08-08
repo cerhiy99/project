@@ -7,16 +7,18 @@ class ErrorApi extends Error {
     }
  
     static badRequest(message) {
-        console.log(message,"fd")
-        return new ErrorApi(400,message)
+        console.log(message)
+        return new ErrorApi(200,{status:400});
     }
 
     static internal(message) {
-        return new ErrorApi(500,message)
+        console.log(message)
+        return new ErrorApi(200,{status:500});
     }
 
     static noAuth(message){
-        return new ErrorApi(200,message);
+        console.log(message)
+        return new ErrorApi(200,{status:401});
     }
 }
 
